@@ -314,7 +314,7 @@ class Logger implements LoggerInterface, ResettableInterface
         }
 
         if (!static::$timezone) {
-            static::$timezone = new \DateTimeZone(date_default_timezone_get() ?: 'UTC');
+            static::$timezone = new \DateTimeZone('UTC'); // APPARELMAGIC CHANGED - Always use UTC as default
         }
 
         // php7.1+ always has microseconds enabled, so we do not need this hack
